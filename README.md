@@ -45,4 +45,3 @@ L'unico modo supportato per buildare ed eseguire il progetto è tramite Docker C
 Rinaldo Perna
 
 ---
-Questa documentazione è adatta per la presentazione all'esame universitario. Per ulteriori dettagli, consulta il codice sorgente e i commenti all'interno del progetto.
