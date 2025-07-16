@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Pagina Amministrazione</title>
+
+    <link rel="stylesheet" href="css/admin-home.css" type="text/css">
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="js/cookie.js"></script>
+
+    <script>
+        /* no-admin */
+        function controlCookie(){
+            let c = getCookie();
+            if(c != "admin"){
+
+                document.getElementById("body").innerHTML = "<div class='no-admin'>" +
+                    "<p class='no-amministratore'>NON SEI AMMINISTRATORE!!!</p><br>" +
+                    "<img src=\"images\\pikachu-no.gif\"><br><br><br>" +
+                    "<a class='no-amministratore-link' href='index.html'> Torna alla home</a>" +
+                "</div>";
+
+            }
+        }
+
+    </script>
+</head>
+<body  id ="body" onload="controlCookie()">
+
+<h2 class="h zoom">Aggiunta di giochi: </h2><br><br>
+<div class="admin">
+<!-- form admin_f -->
+    <form action="AdminInsert" method="post" class="admin_F reveal"><br><br>
+
+
+    <label for="tit" class="lab">Titolo: </label><br>
+    <input id="tit" type="text" placeholder="inserisci titolo del gioco" name="titolo" class="text"><br><br>
+
+    <label for="pr" class="lab">Prezzo: </label><br>
+    <input id="pr" type="text" placeholder="inserisci prezzo del gioco" name="prezzo" class="text"><br><br>
+
+    <label for="descrizione" class="lab">Descrizione Gioco: </label><br>
+    <input id="descrizione" type="text" placeholder="inserisci descrizione del gioco" name="descrizione" class="text"><br><br>
+
+    <label for="anno">Anno Gioco: </label><br>
+    <input id="anno" type="text" placeholder="inserisci data del gioco" name="data" class="text"><br><br>
+
+    <label for="console">Console: </label><br>
+    <input id="console" type="text" placeholder="inserisci console del gioco" name="console" class="text"><br><br>
+
+    <label for="software">Software House: </label><br>
+    <input id="software" type="text" placeholder="inserisci nome della software hoyse" name="software" class="text"><br><br>
+
+    <label for="url">Url: </label><br>
+    <input id="url" type="text" placeholder="insrisci url per il gioco" name="url" class="text"><br><br>
+
+    <label for="sconto">E' in sconto?</label><br>
+    <input id="sconto" type="radio" name="scelta" value="SI">SI<br>
+    <input id="sconto1" type="radio" name="scelta" value="NO">NO<br><br>
+
+    <label for="prezzoS">Prezzo in sconto: </label><br>
+    <input id="prezzoS" type="text" placeholder="Se SI,inserisci prezzo scontato" name="sconto" class="text"><br><br>
+
+    <label for="genere">Genere: </label><br>
+    <input id="genere" type="text" placeholder="inserisci genere del gioco" name="genere" class="text"><br><br>
+
+    <label for="immagine">Titolo immagine: </label><br>
+    <input id="immagine" type="text" placeholder="inserisci titolo immagine per il gioco" value=""  name="immagine"><br>
+
+    <label for="vendite">Numero vendite: </label><br>
+    <input id="vendite" type="text" placeholder="inserisci numero vendite per il gioco" value=""  name="numeroVendite"><br>
+
+
+    <label for="vendita">E' in vendita?</label><br>
+    <input id="vendita" type="radio" name="vendita" value="SI">SI<br>
+    <input id="vendita1" type="radio" name="vendita" value="NO">NO<br><br>
+
+
+
+    <input class="button" type="submit" value="Aggiungi al database"><br>
+</form>
+</div>
+
+
+    <form action="index.html" class="tornaI zoom">
+        <a href="RimuoviCookieAdmin">
+        <input class="button" type="button" value="Torna alla home da non amministratore">
+        </a>
+    </form>
+
+<script>
+
+    ScrollReveal().reveal('.reveal');
+
+    ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600, mobile: false }) ; /*animazione reveal*/
+
+    ScrollReveal().reveal('.zoom',  { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
+
+
+</script>
+</body>
+</html>

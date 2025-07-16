@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- adattamento automatico alla pagina -->
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registrazione.css" type="text/css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <title>REGISTRAZIONE</title>
+</head>
+
+<body>
+<!-- logo -->
+<header class = "header">
+    <div id = "logo" class= "logo reveal">
+        <a class="link-logo"  title="logo"  href="index.html">
+            <div class = "immagine">
+                <img class = "img-logo" src="images/Logo.png">
+            </div>
+        </a>
+    </div>
+</header>
+
+
+<!-- Inserimento dati personali -->
+<div class = "dati-personali ">
+    <form id="form" class = "registrazione reveal" action="RegistrazioneServlet" method="post">
+        <fieldset class = "f1">
+            <legend class="leg">Dati-Personali</legend>
+
+            <label for = "nome" class="lab" id="no"> Nome: </label>
+            <input onclick="document.getElementById('no').style.fontSize='25px'" class ="in" type="text" name="nome" id="nome" required="required" placeholder="Inserisci nome..."><br>
+
+            <label for = "cognome" class="lab" id="co"> Cognome: </label>
+            <input onclick="document.getElementById('co').style.fontSize='25px'" class="in" type="text" name="cognome" id="cognome" required="required" placeholder="Inserisci cognome..."><br>
+
+            <label for = "email" class="lab" id="em"> E-mail: </label>
+            <input onclick="document.getElementById('em').style.fontSize='25px'" class="in" type="text" name="email" id="email" required="required" placeholder="Inserisci e-mail..."><br>
+            <p id="control_email"></p>
+
+            <label for="user" class="lab" id="us">Username: </label>
+            <input onclick="document.getElementById('us').style.fontSize='25px'" class="in" type="text"  name = "nickname" id="user" required="required" placeholder="Inserisci username..."><br>
+            <p id="control_username"></p>
+
+            <label for="password" class="lab" id="pa">Password: </label>
+            <input onclick="document.getElementById('pa').style.fontSize='25px'" class="in" type="password" id="password" name="password" required="required" placeholder="Inserisci password..."><br>
+
+
+            <label for = "data-di-nascita" class="lab" id="ddn"> Data di nascita: </label>
+            <input onclick="document.getElementById('ddn').style.fontSize='25px'" class="in" type="date" name="data-di-nascita" id="data-di-nascita" required="required" placeholder="Inserisci data di nascita..."><br>
+            <p id="controllo_data"></p>
+
+            <input onclick="myFunction()" class= "button1 reveal" type="button" value="Registrati">
+        </fieldset>
+    </form>
+</div>
+
+
+
+<!-- Footer -->
+<!--#include file="footer.jsp" -->
+<script >
+    let isEmpty;
+    let isEmptyEmail
+
+    function dataDiNascita(){
+        var string = document.getElementById("data-di-nascita").value;
+        const date = new Date();
+        var month =date.getMonth();
+        var year = date.getFullYear();
+
+        var yearUser= string.substring(0, 4);
+        var monthUser = string.substring(5, 7);
+        var dayUser = string.substring(8, 10);
+
+        if(yearUser < year - 18){
+           return true;
+        }
+        else {
+            return false;
+        }
+
+
+    }
+
+    function myFunction(){
+        if(dataDiNascita()){
+            controlUsername();
+            controlEmail();
+            if(isEmpty && isEmptyEmail){
+                document.getElementById("form").action="RegistrazioneServlet";
+                document.getElementById("form").method = "POST";
+                document.getElementById("form").submit();
+            }else if(!isEmpty){
+                document.getElementById("control_username").innerHTML = "<p id='control_username'>Nickname già in uso </p>";
+            }else{
+                document.getElementById("control_email").innerHTML = "<p id='control_email'>email già in uso </p>";
+            }
+        }else{
+            document.getElementById("controllo_data").innerHTML = "<p id='ue'>Accettiamo solo maggiorenni!</p>";
+        }
+    }
+
+
+    function controlUsername(){
+        let nickname = document.getElementById("user").value;
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.responseText == "esiste") {
+                    isEmpty = false;
+                } else {
+                    isEmpty = true;
+                }
+            }
+        }
+        xhttp.open("POST", "ControlUsername", false);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("nickname=" + nickname);
+
+    }
+    function controlEmail(){
+        let email = document.getElementById("email").value;
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.responseText == "scorretto") {
+                    isEmptyEmail = false;
+                } else {
+                    isEmptyEmail = true;
+                }
+            }
+        }
+        xhttp.open("POST", "ControlEmail", false);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("email=" + email);
+
+    }
+</script>
+
+
+<script>
+    ScrollReveal().reveal('.reveal');
+
+    ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600, mobile: false }) ; /*animazione reveal*/
+
+    ScrollReveal().reveal('.zoom',  { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
+
+
+</script>
+</body>
+</html>

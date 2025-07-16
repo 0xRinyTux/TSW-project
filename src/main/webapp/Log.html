@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- adattamento automatico alla pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/log.css" type="text/css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <title>LOGIN</title>
+</head>
+
+<body >
+<!-- Logo -->
+<header class = "header">
+    <div id = "logo" class= "logo reveal">
+        <a class="link-logo"  title="logo"  href="index.html">
+            <div class = "immagine">
+                <img class = "img-logo" src="images/Logo.png">
+            </div>
+        </a>
+    </div>
+</header>
+
+
+<!-- Div-log -->
+<div class="log reveal">
+
+    <p id="errore"></p>
+    <form class="login reveal" id="form" action="LoginUtente" method="post">
+
+        <label id="e" class="lab" for="email"> Email: </label>
+        <input onclick="document.getElementById('e').style.fontSize='25px'" class="inp" type="text" name="email" id="email" id="email" required="required"><br>
+
+        <label id="p" class="lab" for="password"> Password: </label>
+        <input onclick="document.getElementById('p').style.fontSize='25px'" class="inp" type="password" name="password" id="password" required="required"><br>
+
+         <!-- Bottone -->
+        <input class="bottone" id="bottone" type="button" value="Accedi" onclick="controlLogin()"><br>
+    </form>
+
+    <!-- Non registrato? -->
+    <div class="reg reveal"><br>
+    <a href="Registrazione.html" class="link">Non sei ancora registrato?</a>
+    </div>
+</div>
+
+<!-- Welcome Back -->
+<div class="immagine">
+    <img class="wb" src="images/WelcomeBack.png">
+</div>
+
+
+
+<!-- Footer -->
+<!--#include file="footer.jsp" -->
+
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js" integrity="sha512-Nx/M3T/fWprNarYOrnl+gfWZ25YlZtSNmhjHeC0+2gCtyAdDFXqaORJBj1dC427zt3z/HwkUpPX+cxzonjUgrA==" crossorigin="anonymous"></script>
+
+<script>
+
+    let ajax;
+    function controlWithAjax(email, password){
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function (){
+            if(this.readyState == 4 && this.status == 200) {
+                if (this.responseText == "scorretto") {
+                    ajax = false;
+                }else{
+                    ajax = true;
+                }
+            }
+        }
+        xhttp.open("POST", "ControllaPassword", false);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("email=" + email + "&password=" + password);
+
+    }
+
+    function controlLogin(){
+        let email=document.getElementById("email").value;
+        let password=document.getElementById("password").value;
+        controlWithAjax(email, password);
+        if(ajax){
+            document.getElementById("form").action="LoginUtente";
+            document.getElementById("form").method = "POST";
+            document.getElementById("form").submit();
+        }
+        else{
+            document.getElementById("errore").innerHTML = "Email o Password non valide";
+        }
+    }
+</script>
+
+
+<script>
+    ScrollReveal().reveal('.reveal');
+
+    ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600, mobile: false }) ; /*animazione reveal*/
+
+    ScrollReveal().reveal('.zoom',  { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
+
+</script>
+</body>
+</html>
+
