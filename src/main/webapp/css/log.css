@@ -1,0 +1,138 @@
+body{
+    background-image: url("../images/RossoNero2.png");
+}
+
+/*Logo*/
+.logo{
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-top: -3%;
+    margin-left: -2%;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+@media (max-width: 768px) {
+    .logo{width: 50%; height: auto; margin-left: auto; margin-right: auto}
+}
+@media (max-width: 480px) {
+    .logo{width: 70%; height: auto;}
+}
+
+
+
+/* Div-log */
+.log{
+    background-color: rgba(0,0,0,0.6);
+    color: #D46A6A;
+    text-align: center;
+    border: 2px solid white;
+    padding: 30px 30px;
+    display: block;
+    margin-left: 22%;
+    margin-right: 22%;
+
+}
+@media(max-width:768px){
+    .log{margin-left: 0; margin-right: 0}
+}
+
+.inp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.lab {
+    font-family: 'Georgia',sans-serif;
+    font-size: 20px;
+    transition: all 10s cubic-bezier(.215, .61, .355, 1);
+
+}
+@media(max-width: 768px){
+    .inp{width: 150px}
+}
+
+
+
+/* Bottone */
+.bottone{
+    border: 2px solid white;
+    color: #D46A6A;
+    background-color: rgba(217, 4, 4, 0.3);
+    font-family:'Georgia',sans-serif;
+    height: 50px;
+    width: 150px;
+    padding-bottom: 10px;
+}
+
+.bottone:hover{
+    background-color:#590202;
+}
+
+/*Non registrato?*/
+.link{
+    padding-top: 10px;
+    color: #D46A6A;
+}
+
+
+/* Welcome Back */
+.immagine{
+    text-align: center;
+}
+
+.wb {
+    width: auto;
+    height: 300px;
+}
+
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h3{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+
+
+

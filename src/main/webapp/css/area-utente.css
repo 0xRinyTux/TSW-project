@@ -1,0 +1,167 @@
+body{
+    background-color: black;
+    width: 100%;
+    font-family: "Yuppy TC";
+}
+
+
+/* Barra nera */
+.barra-nera{
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    color: rgba(191, 150, 126);
+    display: block;
+
+}
+
+/* Logo */
+.logo{
+    width: 150px;
+    height: 150px;
+    margin-top: 0;
+    margin-left: 0;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+
+@media (max-width: 768px) {
+    .logo{width: 150px; height: 150px;}
+}
+@media (max-width: 480px) {
+    .logo{width: 100px; height: 100px;}
+}
+
+.bottone{
+    width: 8%;
+    height: 40px;
+    margin-left: 90%;
+    margin-top: -100px;
+}
+.button-home{
+    padding: 18px 28px;
+    background: rgba(191, 150, 126);
+    background-size: cover;
+    color:rgb(0,0,0);
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center ;
+
+}
+@media (max-width: 768px) {
+    .bottone{margin-left: 70%; margin-top: -80px; width: 25%;}
+    .div-contenitore{display: flex;}
+}
+
+/* Contenitore */
+.div-contenitore{
+    display: flex;
+    height: 130vh;
+    width: 100%;
+}
+
+/* Immagine */
+.img-goku{
+    width: 45%;
+    height: 80%;
+    margin-top: 0;
+
+}
+.img-goku img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Bentornato */
+.div-bentornato {
+    text-align: center;
+    background-color: white;
+    width: 55%;
+    height: 80%;
+    color: black;
+
+}
+
+.div-bentornato h1{
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button {
+    padding: 18px 28px;
+    background: rgba(191, 150, 126);
+    color:rgb(0,0,0);
+    display: inline-block;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 10px 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px 150px 30px;
+    color: white;
+}
+
+
+.col h4{
+    width: 100%;
+    text-align: center;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+
+
+

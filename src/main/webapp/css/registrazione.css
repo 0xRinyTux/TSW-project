@@ -1,0 +1,134 @@
+body{
+    background-image: url("../images/RossoNero2.png");
+    background-size: 50%;
+    background-repeat: repeat;
+
+}
+
+
+
+/*Logo*/
+.logo{
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-top: -3%;
+    margin-left: -2%;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+@media (max-width: 768px) {
+    .logo{width: 50%; height: auto; margin-left: auto; margin-right: auto}
+}
+@media (max-width: 480px) {
+    .logo{width: 70%; height: auto;}
+}
+
+
+/* Inserimento dati personali */
+.dati-personali{
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+    background-size: auto;
+    background-repeat: repeat;
+
+}
+
+.dati-personali .f1{
+    text-align: center;
+    font-family: 'Georgia',sans-serif;
+    color: #D46A6A;
+    background-color: rgba(0,0,0,0.6);
+}
+@media(max-width: 430px){
+ .dati-personali{margin:0 21%}
+}
+
+.leg {
+    color: #D46A6A;
+    border: 2px solid #D46A6A;
+    background-color: rgba(217, 4, 4, 0.3);
+}
+
+.lab{
+    transition: all 10s cubic-bezier(.215, .61, .355, 1);
+}
+.dati-personali .f1 .in {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.button1{
+    width: 100px;
+    height: 30px;
+    font-family:'Georgia',sans-serif;
+    color: #D46A6A;
+    border: 2px solid white;
+    background-color: rgba(217, 4, 4, 0.3);
+
+}
+
+.button1:hover{
+    background-color: #590202;
+}
+
+#data-di-nascita{
+    font-family:'Georgia',sans-serif;
+    width: 27%;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h3{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
