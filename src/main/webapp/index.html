@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
+
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="js/cookie.js"></script>
+
+</head>
+<body onload="controlCookie()">
+
+
+  <!-- Header -->
+  <div class="header">
+    <!-- Barra di ricerca -->
+    <div class="barra-ric">
+      <form id = "b&p-search-form" class = "b&p-search-form" action="SearchItem" method="get" role="search">
+        <input  class="barra-ric-text" type="text"  name = "search"  placeholder="Minecraft, Fortnite and COD...">
+      </form>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo reveal">
+      <a class="link-logo"  title="logo"  href="index.html">
+        <div>
+          <img class="img-logo" src="images/Logo.png" alt="">
+        </div>
+      </a>
+    </div>
+
+
+
+
+    <!-- Full Menu -->
+    <ul class="menu">
+      <li><a href="contatti.html">Contatti</a></li>
+      <li id="car"><a href="VerificaLogin">Carrello</a></li>
+      <li><a href="ControlCookie" id="utente">Accedi</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Carrello -->
+      <div class="car">
+        <a href="carrello.jsp">
+        <div>
+          <img class="car-img" src="images/carrello.png" alt="">
+        </div>
+        </a>
+      </div>
+  </div>
+
+  <!-- Hero (video Minecraft) -->
+  <div class="hero">
+    <div class="hero__content reveal">
+      <p class="intro-text"></p>
+      <h1 class="big-text">BUY&PLAY</h1>
+      <a href="GiochiMomento" class="button">Scopri di più</a>
+    </div>
+    <img id="video-back" src="images/minecraft.gif">
+  </div>
+
+
+  <!-- Poster (Spiderman)-->
+  <div class="poster mt-3">
+    <div class="poster__img reveal">
+      <img class="poster__image" src="images/spiderman.jpeg" alt="">
+    </div>
+    <div class="poster__content reveal">
+      <h3 class="big-text">GIOCHI DEL MOMENTO</h3>
+      <p>Qui la sezione dei giochi del momento.
+        Minecraft, Fifa 23 e tanto altro per voi appassionati dei giochi che vanno di "moda". Clicca in basso per saperne di più</p>
+      <a href="GiochiMomento" class="button"> Scopri di più</a>
+    </div>
+  </div>
+
+<!-- BG Cover () -->
+  <div class="bg-cover mt-3">
+    <div class="bg">
+    <div class="bg-cover__title reveal">
+      <h3 class="big-text tw">Super Mario Kart 8</h3>
+    </div>
+      <div class="bg-cover__img reveal">
+          <img src="images/mario-kart.jpeg" class="mk" alt="">
+      </div>
+    </div>
+
+
+    
+    <div class="bg-cover__text reveal">
+
+      <h4 class="normal-text tw">Passato</h4>
+      <p class="tw">Super Mario Kart (スーパーマリオカート Sūpā Mario Kāto?) è un videogioco simulatore di guida, prodotto da Nintendo e pubblicato per la prima volta nel 1992 per SNES. Il primo della serie di Mario Kart, è il più celebre gioco di corse motoristiche per Super Nintendo.</p>
+
+      <h4 class="normal-text tw">Presente</h4>
+      <p class="tw">Scopri ora tutte le novità di Super Mario Kart 8 e del pass percorsi aggiuntivi.</p>
+
+      <h4 class="normal-text tw">Futuro</h4>
+      <p class="tw">Preparati a grandissime novità. Super Mario Kart 9 sta per arrivare e sarà un vero mix di emozioni per tutti gli appassionati.</p>
+
+      <a href="SearchItem?search=Mario+Kart+8" class="button">Scopri di più</a>
+
+    </div>
+  </div>
+
+
+  <!-- Grid (Più venduti) -->
+  <div class="grid mt-3">
+    <div class="col reveal">
+      <h3 class="big-text" id="pv">Giochi più venduti <br/></h3>
+    </div>
+    <div class="col reveal">
+      <p class="col-text">Gli articoli più acquistati dai nostri utenti. Giochi di azione, storia, strategia e molto altro ancora per un magico divertimento.</p>
+      <a href="GiochiMomento" class="button" id="but">Scopri di più</a>
+    </div>
+  </div>
+
+
+  <!-- Carousel (Cerchi)-->
+  <div class="main-carousel zoom" data-flickity='{ "cellAlign": "left", "contain": true }'>
+    <div class="carousel-cell1">
+      <a href="SearchItem?search=Gta+5">
+      <img src="images/GTA%205%20PV.jpeg">
+      </a>
+    </div>
+    <div class="carousel-cell2">
+      <a href="SearchItem?search=forza+horizon+5">
+        <img src="images/ForzaH5%20PV.webp">
+      </a>
+    </div>
+    <div class="carousel-cell3">
+      <a href="SearchItem?search=God+of+war">
+        <img src="images/GOD%20PV.jpeg">
+      </a>
+    </div>
+    <div class="carousel-cell4">
+      <a href="SearchItem?search=Guardians+of+the+Galaxy">
+        <img src="images/Guardiani%20Marvel%20PV.jpeg">
+      </a>
+    </div>
+    <div class="carousel-cell5">
+      <a href="SearchItem?search=Lego+Star+Wars">
+        <img src="images/Lego%20SW%20PV.jpeg">
+      </a>
+    </div>
+    <div class="carousel-cell6">
+      <a href="SearchItem?search=Read+Dead+Redemption+2">
+        <img src="images/RDR%20PV.webp">
+      </a>
+    </div>
+  </div>
+
+
+
+
+<!-- Poster () -->
+  <div class="poster mt-3">
+
+    <div class="poster__content reveal">
+      <h3 class="big-text">Cars 3: <br>In gara per la vittoria</h3>
+      <p>Scopri subito il nuovo Cars3: in gara per la vittoria; Nuovissimi contenuti e personaggi del tutto nuovi ispirati al film Cars3.</p>
+      <a href="SearchItem?search=cars+3" class="button">Scopri di più</a>
+    </div>
+
+    <div class="poster__img  reveal">
+      <img src="images/Cars3.gif" alt="">
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function controlCookie() {
+      let c = getCookie();
+      if (c == "admin") {
+        deleteCookie(c);
+      } else if (c != "") {
+        document.getElementById("utente").innerHTML = "<div class=\"dropdown\">\n" +
+                "        <button class=\"dropbtn\">Bentornato "+ c +"</button>\n" +
+                "        <div class=\"dropdown-content\">\n" +
+                "\n" +
+                "          <a href=\"ControlloSessione\">AreaUtente</a>\n" +
+                "          <a href=\"Logout\">Logout</a>\n" +
+                "          <a href=\"contatti.html\">Contatti</a>\n" +
+                "\n" +
+                "        </div>\n" +
+                "      </div>"
+      }
+    }
+
+  </script>
+
+
+
+
+
+<!-- Footer -->
+<!--#include file="footer.jsp" -->
+
+
+
+
+
+
+
+
+
+
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js" integrity="sha512-Nx/M3T/fWprNarYOrnl+gfWZ25YlZtSNmhjHeC0+2gCtyAdDFXqaORJBj1dC427zt3z/HwkUpPX+cxzonjUgrA==" crossorigin="anonymous"></script>
+
+
+
+
+  <script>
+  $( document ).ready(function() {
+
+    /* Open Panel */
+    $( ".hamburger" ).on('click', function() {
+      $(".menu").toggleClass("menu--open");
+    });
+
+  });
+
+
+  ScrollReveal().reveal('.reveal');
+
+  ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600, mobile: false }) ; /*animazione reveal*/
+
+  ScrollReveal().reveal('.zoom',  {  duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
+
+
+
+</script>
+
+
+</body>
+</html>
