@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    background-image: url("../images/RossoNero2.png");
+    color: #D46A6A;
+    font-family: 'Georgia',sans-serif;
+    width: 100%;
+}
+/* Form modifica */
+.form-modifica{
+    border: 2px dotted rgba(191, 150, 126);
+    border-radius: 30%;
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px;
+
+}
+
+.button{
+    width: auto;
+    height: 40px;
+    font-family:'Georgia',sans-serif;
+    color: #D46A6A;
+    background-color: rgba(0, 0, 0, 0.3);
+}
