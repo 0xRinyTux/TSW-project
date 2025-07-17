@@ -1,0 +1,25 @@
+body{
+    background-image: url("../images/RossoNero2.png");
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+/* Contenitore */
+.contenitore{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid rgba(191, 150, 126);
+    border-radius: 20%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.button {
+    padding: 10px 20px;
+    background: rgba(191, 150, 126);
+    color:rgb(0,0,0);
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 14px;
+}
