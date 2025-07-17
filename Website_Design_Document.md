@@ -22,7 +22,7 @@ Descrizione sintetica: BuyandPlay è una piattaforma web per la vendita di video
 | Architettura MVC: separazione servlet (controller) e bean/DAO (model)         | ✔️                     |
 | Session/token per accesso e carrello                                            | ✔️                     |
 | Controllo accessi su servlet e JSP                                              | ✔️                     |
-| Validazione form client-side (regex, DOM)                                       | ✔️*                    |
+| Validazione form client-side (regex, DOM)                                       | ✔️                     |
 | Risorse statiche organizzate (scripts, styles, imagesDB)                       | ✔️                     |
 | Responsive design                                                                | ✔️                     |
 | Ambiente di produzione via Docker Compose                                       | ✔️                     |
@@ -140,20 +140,11 @@ CREATE TABLE KeyTable (
 
 ---
 
-## 8. Deployment & DevOps
+## 8. Deployment
 
 - **Docker Compose:** servizi applicazione + MySQL  
 - **WAR packaging:** generato con Maven (`packaging>war`)  
 - **Container orchestration:** `docker-compose up --build`
-
----
-
-## 9. Future Enhancements
-
-- Completare validazione client con messaggi DOM dettagliati  
-- Aggiungere paginazione catalogo  
-- Integrazione API esterne per pagamenti  
-- Responsive mobile-first UI
 
 ---
 
