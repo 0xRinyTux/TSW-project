@@ -40,16 +40,10 @@ L'unico modo supportato per buildare ed eseguire il progetto è tramite Docker C
    docker-compose up --build
    ```
 
-<<<<<<< HEAD
 Questo comando costruirà e avvierà automaticamente tutti i servizi necessari (applicazione e database) tramite i container Docker.
 =======
->>>>>>> f520872d9f0faebb1e29412f05ead3a886242cfa
 
 ## Autore
 Rinaldo Perna
 
 ---
-<<<<<<< HEAD
-Questa documentazione è adatta per la presentazione all'esame universitario. Per ulteriori dettagli, consulta il codice sorgente e i commenti all'interno del progetto.
-=======
->>>>>>> f520872d9f0faebb1e29412f05ead3a886242cfa
