@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="css/controllo-giochi.css">
 
-    <script src="js/cookie.js"></script>
+    <script src="<%= request.getContextPath() %>/scripts/cookie.js"></script>
     <script>
 
         function controlCookie(){

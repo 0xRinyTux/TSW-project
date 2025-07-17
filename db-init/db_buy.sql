@@ -25,6 +25,9 @@ create table Fattura(
   nickname varchar(45) references Cliente(nickname),
   carta varchar(45) ,
   numero_carta varchar(40) ,
+  indirizzoFatturazione varchar(100),
+  chiave varchar(255),
+  titolo varchar(100),
   primary key (id_fattura)
 );
 

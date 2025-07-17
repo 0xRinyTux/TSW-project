@@ -22,7 +22,23 @@
 
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-      <script src="<%= request.getContextPath() %>/js/cookie.js"></script>
+      <script src="<%= request.getContextPath() %>/scripts/cookie.js"></script>
+      <script>
+          function controlCookie() {
+              const c = getCookie();
+              const utenteLink = document.getElementById("utente");
+              if (!c) {
+                  utenteLink.textContent = 'Accedi';
+                  utenteLink.href = 'Log.html';
+              } else if (c === 'admin') {
+                  utenteLink.textContent = 'Admin';
+                  utenteLink.href = 'ControlCookie';
+              } else {
+                  utenteLink.textContent = c;
+                  utenteLink.href = 'area-utente.jsp';
+              }
+          }
+      </script>
 
   </head>
   <body onload="controlCookie()">

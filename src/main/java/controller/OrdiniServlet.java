@@ -15,30 +15,22 @@ import java.util.ArrayList;
 public class OrdiniServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String nickname = (String) request.getSession().getAttribute("username");
+        System.out.println("[DEBUG] Ordini - Retrieved nickname from session: " + nickname);
 
-        //cerca gli id delle fatture di un cliente in base al nickname
-        FatturaBean fatturaBean = new FatturaBean();
-        FatturaDAO fatturaDAO = new FatturaDAO();
-        ArrayList<Integer> idsFattura = fatturaDAO.retriveIDsFatturaByNickname(nickname);
-
-        if(idsFattura != null) {
-
-            //Con l' id fattura cerca tutti i giochi comprati dall'utente
-            CollocamentoBean collocamentoBean = new CollocamentoBean();
-            CollocamentoDAO collocamentoDAO = new CollocamentoDAO();
-            ArrayList<CollocamentoBean> collocamentoBeans = collocamentoDAO.retrieveIDsGiocoByFatture(idsFattura);
-
-            //Con l'id del gioco e della fattura ritira tutte le key appartenenti all'utente dei titoli acquistati
-            KeyDAO keyDAO = new KeyDAO();
-            ArrayList<KeyBean> keyBeans = keyDAO.retrieveIDKeyByGiocchiAndFatture(collocamentoBeans);
-
-
-            request.setAttribute("keyBeans", keyBeans);
-
+        ArrayList<FatturaBean> fattureWithKeysAndTitles = new ArrayList<>();
+        if (nickname != null) {
+            FatturaDAO fatturaDAO = new FatturaDAO();
+            // Usa il nuovo metodo per recuperare fatture con chiavi e titoli
+            ArrayList<FatturaBean> result = fatturaDAO.retrieveFattureWithKeysAndTitles(nickname);
+            if (result != null) {
+                fattureWithKeysAndTitles = result;
+            }
+            System.out.println("[DEBUG] Ordini - Found fatture with keys and titles: " + fattureWithKeysAndTitles.size());
         }
+        
+        System.out.println("[DEBUG] Ordini - Final fatture size: " + fattureWithKeysAndTitles.size());
+        request.setAttribute("fattureWithKeys", fattureWithKeysAndTitles);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/results/ordini.jsp");
         requestDispatcher.forward(request, response);
-
-
     }
 }

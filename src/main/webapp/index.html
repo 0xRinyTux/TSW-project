@@ -16,7 +16,7 @@
 
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <script src="js/cookie.js"></script>
+  <script src="scripts/cookie.js"></script>
 
 </head>
 <body onload="controlCookie()">
@@ -134,7 +134,7 @@
   <!-- Carousel (Cerchi)-->
   <div class="main-carousel zoom" data-flickity='{ "cellAlign": "left", "contain": true }'>
     <div class="carousel-cell1">
-      <a href="SearchItem?search=Gta+5">
+      <a href="SearchItem?search=Gta5">
       <img src="images/GTA%205%20PV.jpeg">
       </a>
     </div>
@@ -149,18 +149,18 @@
       </a>
     </div>
     <div class="carousel-cell4">
-      <a href="SearchItem?search=Guardians+of+the+Galaxy">
-        <img src="images/Guardiani%20Marvel%20PV.jpeg">
+      <a href='SearchItem?search=Marvel"s Guardians of the Galaxy'>
+        <img src="images/Guardiani%20Marvel%20PV.jpeg" alt="Guardiani Marvel of the Galaxy">
       </a>
     </div>
     <div class="carousel-cell5">
       <a href="SearchItem?search=Lego+Star+Wars">
-        <img src="images/Lego%20SW%20PV.jpeg">
+        <img src="images/Lego%20SW%20PV.jpeg" alt="Lego Star Wars">
       </a>
     </div>
     <div class="carousel-cell6">
       <a href="SearchItem?search=Read+Dead+Redemption+2">
-        <img src="images/RDR%20PV.webp">
+        <img src="images/RDR%20PV.webp" alt="Red Dead Redemption 2">
       </a>
     </div>
   </div>
@@ -174,7 +174,7 @@
     <div class="poster__content reveal">
       <h3 class="big-text">Cars 3: <br>In gara per la vittoria</h3>
       <p>Scopri subito il nuovo Cars3: in gara per la vittoria; Nuovissimi contenuti e personaggi del tutto nuovi ispirati al film Cars3.</p>
-      <a href="SearchItem?search=cars+3" class="button">Scopri di più</a>
+      <a href="SearchItem?search=cars3" class="button">Scopri di più</a>
     </div>
 
     <div class="poster__img  reveal">
@@ -182,43 +182,26 @@
     </div>
 
   </div>
-
-
-  <script>
-
-    function controlCookie() {
-      let c = getCookie();
-      if (c == "admin") {
-        deleteCookie(c);
-      } else if (c != "") {
-        document.getElementById("utente").innerHTML = "<div class=\"dropdown\">\n" +
+<script>
+    function controlCookie(){
+        let c = getCookie();
+        if(c != ""){
+            document.getElementById("utente").innerHTML = "<div class=\"dropdown\">\n" +
                 "        <button class=\"dropbtn\">Bentornato "+ c +"</button>\n" +
                 "        <div class=\"dropdown-content\">\n" +
                 "\n" +
-                "          <a href=\"ControlloSessione\">AreaUtente</a>\n" +
+                "          <a href=\"area-utente.jsp\">AreaUtente</a>\n" +
                 "          <a href=\"Logout\">Logout</a>\n" +
                 "          <a href=\"contatti.html\">Contatti</a>\n" +
                 "\n" +
                 "        </div>\n" +
-                "      </div>"
-      }
+                "      </div>";
+        }
     }
-
-  </script>
-
-
-
-
+</script>
 
 <!-- Footer -->
 <!--#include file="footer.jsp" -->
-
-
-
-
-
-
-
 
 
 
@@ -247,10 +230,18 @@
 
   ScrollReveal().reveal('.zoom',  {  duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
 
-
-
 </script>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="grid">
+        <div class="col reveal">
+            <center>
+                <h4 class="normal-text tw">&copy; Rinaldo Perna</h4>
+            </center>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script src="js/cookie.js"></script>
+    <script src="<%= request.getContextPath() %>/scripts/cookie.js"></script>
 
 </head>
 <body onload="controlCookie()" id="body">
@@ -44,7 +44,7 @@
 
     <!-- Full Menu -->
     <ul class="menu">
-        <li><a href="/WEB-INF/results/registrazionesuccesso.jsp">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li id="car"><a href="">Carrello</a></li>
         <li><a href="ControlCookie" id="utente">Accedi</a></li>
     </ul>

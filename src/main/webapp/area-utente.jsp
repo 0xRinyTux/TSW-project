@@ -48,7 +48,10 @@
       <a class="button" id="modifica" href="aggiornamento-cliente.jsp">Modifica</a><br><br><br><br><br><br><br><br><br>
 
       <label for="ordini">Clicca sul pulsante i miei ordini per visionare gli oridini effettuati</label><br><br>
-      <a class="button" id="ordini" href="Ordini">I Miei Ordini</a>
+      <a class="button" id="ordini" href="Ordini">I Miei Ordini</a><br><br><br><br><br><br><br><br><br>
+
+      <label for="logout">Clicca sul pulsante logout per uscire</label><br><br>
+      <a class="button" id="logout" href="Logout">Logout</a>
 
     </div>
   </div>

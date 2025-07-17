@@ -38,6 +38,11 @@ public class AcquistoServlet extends HttpServlet {
         }
         ClienteDAO clienteDAO = new ClienteDAO();
         ClienteBean clienteBean = clienteDAO.retrieveClientByNickname(nickname);
+        if (clienteBean == null) {
+            // No logged-in user, redirect to login
+            response.sendRedirect("Log.html");
+            return;
+        }
         String indirizzo = "/WEB-INF/results/pagamento.jsp";
         session.setAttribute("cliente", clienteBean);
 

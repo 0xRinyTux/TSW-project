@@ -79,4 +79,23 @@ public class FatturaBean{
     public void setTotaleFattura(double totaleFattura) {
         this.totaleFattura = totaleFattura;
     }
+
+    private String chiave;
+    private String titolo;
+
+    public String getChiave() {
+        return chiave;
+    }
+
+    public void setChiave(String chiave) {
+        this.chiave = chiave;
+    }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
 }

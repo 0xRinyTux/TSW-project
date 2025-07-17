@@ -29,16 +29,6 @@ insert into Chiave values
  ('death_stranding',66,2),
  ('death_stranding',63,1);
 
-
-insert into Fattura values 
-(62,'2022-05-22','simox','Postepay','1234512345123456'),
-(63,'2022-05-23','simox','Visa','1234512345123456'),
-(64,'2022-05-21','simox','Postepay','1234512345123456'),
-(65,'2022-05-27','simox','Prepagate Paypal','1234512345123456'),
-(66,'2022-05-29','simox','Mastercard','1234512345123456'),
-(67,'2022-05-22','giacomix','Postepay','1234512345123456'),
-(68,'2022-05-21','alfrex','Postepay','1234512345123456');
-
 insert into Cliente (nickname, passwordCliente, email, nome, cognome, data_di_nascita, tipo_carta, numero_carta, indirizzo_fatturazione) values
 ('admin',  'admin', 'admin@admin.admin', 'admin', 'admin', '1999-12-31', 'NOP', '1234567890', 'Via Admin 1'),
 ('alfrex', 'alfrex', 'alfrex@gmail.com', 'Alfredo', 'Rossi', '1990-01-01', 'Visa', '1234567890123456', 'Via Roma 1'),
@@ -91,7 +81,7 @@ insert into Gioco values
 ('Mario Kart 8', 22.60, 'Mario Kart 8 (マリオカート8 Mario Kāto 8?) è un videogioco simulatore di guida del 2014 ,la novità principale è il fatto che, in alcune piste, si può correre sottosopra o sui muri, sfidando la gravità.', '2014', 'xbox','tiny_bull_studios', 'hjhhjjhj', 0, NULL, 'simulatore di guida', 1, 'Mario_Kart_8', 270 ),
 ('Cars3',19.50, 'Cars 3 - In gara per la vittoria (Cars 3: Driven to Win) è un videogioco basato sul film di animazione Disney-Pixar Cars 3; sviluppato dalla Avalance Software, è stato pubblicato il 13 giugno 2017. i giocatori potranno unirsi a Saetta McQueen e Cruz Ramirez mentre si preparano ad affrontare il pilota rivale Jackson Storm. Nel gioco sono disponibili più di 20 personaggi giocabili personalizzabili, fra cui celebri eroi della serie Cars e piloti di nuova generazione.', '2017', 'play4', 'forge_replay', 'hjhgfg', 0, NULL, 'simulatore di guida', 1, 'Cars3', 630 ),
 ('Forza Horizon 5', 15.50, 'Un gioco di corse che non conosce rivali: opera di PlayGround Games, è un capolavoro splendido da vedere e divertente da giocare.', '2021', 'play4', 'milestone', 'hggfg', 1, 2.50, 'simulatore di guida', 1, 'Forza_Horizon_5', 250 ),
-('Marvel"s Guardians of the Galaxy ', 19.50 , 'Marvel"s Guardians of the Galaxy è un videogioco action-adventure sviluppato da Eidos Montréal e pubblicato da Square Enix. Basato sulla serie Guardiani della Galassia', '2021', 'play5',  'mixedBag', 'fuiiiuj', 0, NULL, 'azione-avventura', 1, 'Marvel"s_Guardians_of_the_Galaxy', 600),
+('Marvel"s Guardians of the Galaxy ', 19.50 , 'Marvel"s Guardians of the Galaxy è un videogioco action-adventure sviluppato da Eidos Montréal e pubblicato da Square Enix. Basato sulla serie Guardiani della Galassia', '2021', 'play5',  'mixedBag', 'fuiiiuj', 0, NULL, 'azione-avventura', 1, "Marvel's_Guardians_of_the_Galaxy", 600),
 ('Lego star wars il videogioco', 48.78, 'è un videogioco del 2005 ambientato nell"universo fittizio creato dall"unione del mondo Lego e quello di Guerre stellari ambientato nei primi tre episodi della saga', '2005', 'play5',  'mixedBag', 'jhgfdfgh', 0, NULL, 'azione', 1, 'Lego_star_wars_il_videogioco', 300),
 ('Final fantasy1', 15.50, 'Final Fantasy (ファイナルファンタジー Fainaru Fantajī?) è un J-RPG uscito nel 1987. È il primo titolo dell"omonima serie ed è stato sviluppato da Square per NES.', '1987', 'pc', 'tiny_bull_studios', 'yuiii', 0, NULL, 'gioco di ruolo', 1, 'Final_fantasy1', 260 ),
 ('Final fantasy2', 15.50, 'Final Fantasy II è il secondo titolo della serie Final Fantasy. È noto per essere tra i primi RPG per console a trattare una trama articolata e per essere stato il primo capitolo della saga a introdurre alcuni di quelli che sarebbero diventati i simboli di Final Fantasy, come i gialli volatili chocobo e la presenza di un personaggio di nome Cid.', '1988', 'pc', 'tiny_bull_studios', 'yuihi', 0, NULL, 'gioco di ruolo', 1, 'Final_fantasy2', 280 ),

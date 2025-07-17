@@ -13,8 +13,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
       <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-      <script src="js/cookie.js"></script>
+      <script src="<%= request.getContextPath() %>/scripts/cookie.js"></script>
 
       <title>Pagamento</title>
   </head>
@@ -87,30 +86,34 @@
             <p class="totale" style="display: none">${totale = totale + (item.getPrezzoGioco() - item.getPrezzoScontato())}</p><br><br>
 
         </c:forEach><br>
-      <%HttpSession session1 = request.getSession();%>
-      <% ClienteBean clienteBean = (ClienteBean) session1.getAttribute("cliente");%>
-      <p class="tot"> Il totale del tuo ordine è: <br>${totale}€</p><br><br>
+        <!-- Check if cliente is present -->
+        <c:if test="${sessionScope.cliente == null}">
+            <div class="error">Si è verificato un problema durante il pagamento. Per favore effettua nuovamente l'accesso.</div>
+            <a class="button" href="Log.html">Vai al login</a><br><br>
+        </c:if>
+        <c:if test="${sessionScope.cliente != null}">
+            <p class="tot"> Il totale del tuo ordine è: <br>${totale}€</p><br><br>
+        </c:if>
   </div>
 
-
-
   <!-- Modalità pagamento -->
+  <c:if test="${sessionScope.cliente != null}">
   <div class="modalita-pagamento zoom">
-  <h2 class="modalita-pagamento-text">Modalità di Pagamento:</h2>
-      <form action="Pagamento" method="post">
+      <h2 class="modalita-pagamento-text">Modalità di Pagamento:</h2>
+      <form action="SalvaDatiPagamento" method="post">
           <div id="form">
 
               <p id="indirizzo_fatturazione"></p>
               <label>Indirizzo di Fatturazione:</label><br>
-              <input type="text" id="indirizzo" name="fatturazione" value="<%=clienteBean.getIndirizzoFatturazione()%>" required="required"><br>
+              <input type="text" id="indirizzo" name="fatturazione" value="${sessionScope.cliente.indirizzoFatturazione}" required="required"><br>
 
               <p id="carta"></p>
               <label>Tipo di Carta: </label><br>
-              <input type="text" id="tipo_carta" name="tipo_carta" value="<%=clienteBean.getTipoCarta()%>" required="required"><br>
+              <input type="text" id="tipo_carta" name="tipo_carta" value="${sessionScope.cliente.tipoCarta}" required="required"><br>
 
               <p id="control"></p>
               <label>Numero Carta</label><br>
-              <input type="text" id="numero_carta" name="numero_carta" value="<%=clienteBean.getNumeroCarta()%>" required="required"><br><br>
+              <input type="text" id="numero_carta" name="numero_carta" value="${sessionScope.cliente.numeroCarta}" required="required"><br><br>
 
               <p>Ci siamo quasi, clicca conferma!</p>
               <input class="button" type="button" id="fatturazione" onclick="conferma()" value="Conferma" required="required"><br><br>
@@ -123,8 +126,7 @@
 
       </form>
   </div>
-
-
+  </c:if>
 
   <%@ include file="./footer.jsp" %>
 

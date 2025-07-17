@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -28,46 +28,35 @@
 <div class="tutto reveal">
 <h1 class="span-ordini">I tuoi ordini: </h1>
 
-<% ArrayList<KeyBean> keyBeans = (ArrayList<KeyBean>) request.getAttribute("keyBeans");
-   int lastFattura= 0;
-   if( keyBeans.size() == 0){%>
-     <h1 class="span-ordini"><%="Non hai mai acquistato nulla !"%></h1>
-   <%}
-
-   for( KeyBean keyBean: keyBeans ){
-       if(lastFattura == keyBean.getFattura()){%>
-        <br>
-        <span class="span">ID Chiave: <%= keyBean.getIdChiave() %><br></span>
-        <span class="span">Nome: <%= keyBean.getNomeGioco() %><br></span>
-        <span id="chiave" class="span">Key: <%= keyBean.getKey() %><br></span>
-
-    <%}else{%>
-        <br><br><br><br>
-        <span class="span">Fattura: <%= keyBean.getFattura() %><br></span><br>
-        <span class="span">ID Chiave: <%= keyBean.getIdChiave() %><br></span>
-        <span class="span">Nome: <%= keyBean.getNomeGioco() %><br></span>
-        <span id="chiave" class="span">Key: <%= keyBean.getKey() %><br></span>
-    <%lastFattura=keyBean.getFattura();%>
-   <%}%>
-<%}%>
+<c:choose>
+  <c:when test="${empty requestScope.fattureWithKeys}">
+    <h1 class="span-ordini">Non hai mai acquistato nulla!</h1>
+  </c:when>
+  <c:otherwise>
+    <c:forEach var="fattura" items="${requestScope.fattureWithKeys}">
+      <div class="ordine-item">
+        <br/><br/>
+        <span class="span">Fattura ID: ${fattura.idFattura}<br/></span>
+        <span class="span">Data Acquisto: ${fattura.dataAcquisto}<br/></span>
+        <span class="span">Titolo Gioco: ${fattura.titolo}<br/></span>
+        <span id="chiave" class="span">Chiave: ${fattura.chiave}<br/></span>
+        <br/>
+      </div>
+    </c:forEach>
+  </c:otherwise>
+</c:choose>
 </div>
 
 <%@ include file="./footer.jsp" %>
 
-
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js" integrity="sha512-Nx/M3T/fWprNarYOrnl+gfWZ25YlZtSNmhjHeC0+2gCtyAdDFXqaORJBj1dC427zt3z/HwkUpPX+cxzonjUgrA==" crossorigin="anonymous"></script>
-
 
 <script>
     ScrollReveal().reveal('.reveal');
-
     ScrollReveal().reveal('.reveal',  { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600, mobile: false }) ; /*animazione reveal*/
-
     ScrollReveal().reveal('.zoom',  { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false}); /*animazione zoom*/
-
 </script>
 
 </body>

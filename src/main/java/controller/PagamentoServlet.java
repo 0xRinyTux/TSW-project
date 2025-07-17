@@ -51,11 +51,9 @@ public class PagamentoServlet extends HttpServlet {
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Key");
         requestDispatcher.include(request, response);
-
-
-
+        // After payment and key generation, redirect to orders page
+        response.sendRedirect(request.getContextPath() + "/Ordini");
 
 
     }
-
 }
