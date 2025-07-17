@@ -1,0 +1,346 @@
+body{
+    background-image: url("../images/RossoNero2.png");
+    width: 100%;
+    font-family: 'Georgia', sans-serif;
+    font-size: 16px;
+}
+
+a {text-decoration: none;}
+
+
+
+/*Header*/
+.header{
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    display: flex;
+    max-width: 1350px;
+    background-color: rgba(0,0,0,0.5);
+    height:110px;
+}
+
+/*  Barra di ricerca */
+.header .barra-ric-text {
+    color: transparent;
+    border-radius: 80px;
+    background-color: white;
+    padding: 2px;
+    height: 60px;
+    width: 60px;
+    transition: .2s;
+    cursor: pointer;
+    position: absolute;
+    right: 50%;
+    border: 0;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 50%;
+    outline: none;
+    font-size: 18px;
+}
+.header .barra-ric-text{
+    background-image: url("../images/lente-pikachu.jpg");
+    background-size: cover;
+}
+
+.barra-ric-text:focus {
+    color: black;
+    width: 47%;
+    right: 12%;
+    padding: 2px 15px;
+    cursor: text;
+    background-image: none;
+    background-color: white;
+    outline: none;
+
+}
+
+@media (max-width: 480px) {
+    .header{height: 150px;}
+    .header input[type=text] {right: 40%; top:60%;}
+    input[type=text]:focus{width: 70%; right: 10%}
+
+}
+/* Fine Barra di ricerca */
+
+
+
+
+
+/* Full Menu */
+.menu{
+    transition: all 1s cubic-bezier(.215, .61, .355, 1); /* anima tutte le proprietà (cubic beizer accellerazione in 4 punti dell'animazione) */
+    width: 100%;
+    z-index: 0;
+}
+
+
+/* Menu a tendina */
+.dropbtn {
+    background-color: transparent;
+    color: rgba(191, 150, 126);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgba(191, 150, 126);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: black;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: black;}
+
+
+
+/*Menu*/
+.menu li{display: inline-block;}
+.menu li a{color: rgba(191, 150, 126);padding: 15px;display: block;}
+
+.hamburger{display: none;}
+
+#car{display: none;}
+
+/*Media Full Menu*/
+@media (max-width: 1268px) {
+    .dropbtn{padding: 0; font-size: 20px;}
+    #car{display: block;}
+
+
+    .header{position: absolute;}
+    .cta{display: none;}
+    .menu{
+        z-index: 11;
+        position: fixed;
+        top:0;
+        right:-100%;
+        background: #000;
+        height: 100vh;
+        padding-top: 80px;
+    }
+    .menu li{
+        display: block;
+    }
+    .menu li a{
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+    .menu--open{right:0;}
+    .hamburger{
+        z-index: 11;
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top:40px;
+        right:30px
+    }
+    .hamburger span{
+        background: #fff;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+/*Logo*/
+.logo{
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-top: -5%;
+    margin-left: -3%;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+
+@media (max-width: 768px) {
+    .logo{width: 30%; height: auto; margin-top: -10%;}
+}
+@media (max-width: 480px) {
+    .logo{width: 40%; height: auto; margin-left: -8%; margin-top: -12%}
+}
+
+
+
+
+
+/*Riepilogo pagamento*/
+.no-giochi{
+    font-size: 20px;
+    text-align: center;
+}
+
+.no-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 40%;
+}
+
+
+.prodotti-carrello{
+    background-color: rgba(0,0,0,0.5);
+    border: 3px solid rgba(191, 150, 126);
+    border-radius: 40%;
+    width: 60%;
+    height: auto;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.prodotti-carrello-text{
+    font-weight: bold;
+    font-size: 21px;
+    color: rgba(191, 150, 126);
+}
+
+.titolo-carrello{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.img-carrello{
+    width: 17%;
+    height: 130px;
+}
+
+.prezzo-carrello{
+    font-size: 21px;
+}
+
+
+
+.tot{
+    font-size: 20px;
+}
+
+
+
+/*Modalità di pagamento*/
+.modalita-pagamento{
+    background-color: rgba(0,0,0,0.6);
+    border: 3px solid rgba(191, 150, 126);
+    border-radius: 40%;
+    width: 60%;
+    height: auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+
+.modalita-pagamento-text{
+    font-weight: bold;
+    font-size: 21px;
+    color: rgba(191, 150, 126);
+}
+
+.button {
+    padding: 8px 11px;
+    background: rgba(191, 150, 126);
+    color:rgb(0,0,0);
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+/* p-finale */
+.p-finale{
+    width: 60%;
+    height: auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.p-finale p{
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+    .prodotti-carrello{margin-top: 55%;}
+    .prodotti-carrello, .modalita-pagamento, .p-finale{width: 80%; margin-left: auto; margin-right: auto;}
+    .prodotti-carrello-text, .modalita-pagamento-text, .p-finale p{font-size: 15px; padding-top: 20px; padding-bottom: 5px;}
+    .img-carrello{width: 40%;}
+    .tot{font-size: 13px;}
+}
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 10px 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h4{
+    width: 100%;
+    text-align: center;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
