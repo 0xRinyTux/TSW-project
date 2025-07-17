@@ -4,7 +4,6 @@
 
 **Project:** BuyandPlay E-commerce Platform  
 **Group Members:** Rinaldo Perna
-**Date:** 17 Luglio 2025
 
 Descrizione sintetica: BuyandPlay è una piattaforma web per la vendita di videogiochi digitali. Offre funzionalità di catalogo, ricerca, carrello, pagamenti e area amministratore.
 
