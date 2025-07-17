@@ -14,7 +14,7 @@
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
 
-      <link rel="stylesheet" href="css/risultato_ricerca.css">
+      <link rel="stylesheet" href="<%= request.getContextPath() %>/css/risultato_ricerca.css">
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
 
@@ -22,7 +22,7 @@
 
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-      <script src="js/cookie.js"></script>
+      <script src="<%= request.getContextPath() %>/js/cookie.js"></script>
 
   </head>
   <body onload="controlCookie()">
@@ -101,7 +101,7 @@
                         <div class="giochi-immagine reveal">
                             <p class="titolo reveal" ><%= items.get(i).getNomeGioco()%></p><br><br><br>
 
-                            <img class="immagine reveal" src="<%= items.get(i).getUrl() %>"><br><br>
+                            <img class="immagine reveal" src="<%= request.getContextPath() + "/imagesDB/" + items.get(i).getImmagine() + ".jpeg" %>"><br><br>
 
                             <p class="descrizione reveal">
                             <%= items.get(i).getDescrizione()%><br><br>
