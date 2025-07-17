@@ -1,0 +1,348 @@
+body{
+    background-image: url("../images/RossoNero2.png");
+    color: rgba(191, 150, 126);
+    font-family:'Inter', sans-serif;
+    width: 100%;
+}
+
+a{text-decoration: none;}
+
+
+.button {
+    padding: 18px 28px;
+    background: rgba(191, 150, 126);
+    color:rgb(0,0,0);
+    display: inline-block;
+    border-radius: 4px;
+}
+.button-piccolo{
+    font-size: 10px;
+    padding: 5px 8px;
+    background: rgba(191, 150, 126);
+    color:rgb(0,0,0);
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+
+
+
+/*Header*/
+.header{
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    height:110px;
+}
+
+/*  Barra di ricerca */
+.header .barra-ric-text {
+    color: transparent;
+    border-radius: 80px;
+    background-color: white;
+    padding: 2px;
+    height: 60px;
+    width: 60px;
+    transition: .2s;
+    cursor: pointer;
+    position: absolute;
+    right: 50%;
+    border: 0;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 50%;
+    outline: none;
+    font-size: 18px;
+}
+.header .barra-ric-text{
+    background-image: url("../images/lente-pikachu.jpg");
+    background-size: cover;
+}
+
+.barra-ric-text:focus {
+    color: black;
+    width: 47%;
+    right: 12%;
+    padding: 2px 15px;
+    cursor: text;
+    background-image: none;
+    background-color: white;
+    outline: none;
+
+}
+
+@media (max-width: 480px) {
+    .header{height: 150px;}
+    .header input[type=text] {right: 40%; top:60%;}
+    input[type=text]:focus{width: 70%; right: 10%}
+
+}
+/* Fine Barra di ricerca */
+
+
+
+/* Logo */
+.logo{
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-top: -5%;
+    margin-left: -3%;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+
+@media (max-width: 768px) {
+    .logo{width: 30%; height: auto; margin-top: -10%;}
+}
+@media (max-width: 480px) {
+    .logo{width: 40%; height: auto; margin-left: -8%; margin-top: -12%}
+}
+
+
+
+
+/* Full Menu */
+.menu{
+    transition: all 1s cubic-bezier(.215, .61, .355, 1); /* anima tutte le proprietà (cubic beizer accellerazione in 4 punti dell'animazione) */
+    width: 100%;
+    z-index: 0;
+}
+
+/* Menu a tendina */
+.dropbtn {
+    background-color: transparent;
+    color: rgba(191, 150, 126);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgba(191, 150, 126);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: black;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: black;}
+
+
+
+
+/* Menu */
+.menu li{display: inline-block;}
+.menu li a{color: rgba(191, 150, 126);padding: 15px;display: block;}
+
+.hamburger{display: none;}
+
+#car{display: none;}
+
+/* Media Menu */
+@media (max-width:1268px) {
+    .dropbtn{padding: 0; font-size: 20px;}
+    #car{display: block;}
+
+
+    .header{position: absolute;}
+    .cta{display: none;}
+    .menu{
+        z-index: 11;
+        position: fixed;
+        top:0;
+        right:-100%;
+        background: #000;
+        height: 100vh;
+        padding-top: 80px;
+    }
+    .menu li{
+        display: block;
+    }
+    .menu li a{
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+    .menu--open{right:0;}
+    .hamburger{
+        z-index: 11;
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top:40px;
+        right:30px
+    }
+    .hamburger span{
+        background: #fff;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Ordini nel carrello */
+.grande-div{
+    border: 3px solid white;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(0,0,0,0.85);
+    margin-top: 15%;
+}
+
+.text{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding:10px;
+}
+
+
+.carrello{
+    border: 3px solid rgba(191, 150, 126);
+    background-color: rgba(0,0,0,0.7);
+    padding: 30px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    align-items: center;
+
+}
+
+.carrello-img{
+    width: 45%;
+    height: 150px;
+    text-align: center;
+}
+
+
+.nome-genere-prezzo{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.no{
+    display: none;
+}
+
+
+@media(max-width: 768px){
+    .grande-div{margin-top: 70%}
+    .carrello-img{width: 80%; height: 100px;}
+}
+
+
+
+
+/* Footer (Nomi) */
+
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h3{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+/*Accedere prima di andare al carrello*/
+.prima-accesso{
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.prima-accesso p{
+    text-align: center;
+}
+.prima-accesso img{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.prima-accesso a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: rgba(191, 150, 126);
+    color:white;
+
+}
+
+.content{max-width: 900px; margin: 40px auto;}
