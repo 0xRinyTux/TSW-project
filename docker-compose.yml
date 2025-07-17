@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: BuyandPlay
+      MYSQL_USER: user
+      MYSQL_PASSWORD: DBusr
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db-init/db_buy.sql:/docker-entrypoint-initdb.d/00-db_buy.sql:ro
+      - ./db-init/insert.sql:/docker-entrypoint-initdb.d/01-insert.sql:ro
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: BuyandPlay
+      DB_USER: root
+      DB_PASS: root
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:
